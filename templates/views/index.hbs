@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+     <link rel="stylesheet" href="css/custom-style.css">
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+     <style>
+        body {
+   background-image: url('homenew1.jpg');
+   background-repeat: no-repeat;
+   background-attachment: fixed;  
+   background-size: cover;
+ }
+   </style>
+    <title>Document</title>
+    {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
+    {{!-- <link rel="stylesheet" href="css/style.css"> --}}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</header>
+<body>
+    {{>navbar}}
+    <!-- Sidebar -->
+<!--
+ <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
+  <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+  <a href="/register" class="w3-bar-item w3-button">Traffic warden</a>
+</div> -->
+
+
+
+<div class="w3-container">
+  <button class="w3-button w3-teal w3-xlarge w3-left" onclick="openLeftMenu()">&#9776;</button>
+  <!-- <div class="w3-container"> -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/bootfile.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about.html">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/services.html">Stationary</a>
+                        <a class="dropdown-item" href="/services.html">other services</a>
+                        <!-- <div class="dropdown-divider"></div> -->
+                        <a class="dropdown-item" href="/services.html">Books</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="/login">login</a>
+                </li>
+                 
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Your needs!</strong> Our work!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+<div class="container-fluid mt-3">
+    <div class="jumbotron">
+        <h1 style=" color: rgb(56, 55, 55);" class="display-4">Welcome To Our Family!</h1>
+        <p class="lead">This Application is here to facilitate you with modern features to make things easy and secure for you .</p>
+        <hr class="my-4">
+        <p>Our Help Your Need.Don't miss a Chance to Fulfill your needs</p>
+        <!-- <a style=" background-color: darkred ;" class="btn btn-primary btn-lg" target="_blank" href="https://www.google.com/maps/place/BOOK+CENTRE/@31.5229294,74.2683242,12z/data=!4m9!1m2!2m1!1sbook+center+lahore!3m5!1s0x39191b530dc2bfa9:0xf623bce4c48ba683!8m2!3d31.5622247!4d74.3195044!15sChJib29rIGNlbnRlciBsYWhvcmVaFCISYm9vayBjZW50ZXIgbGFob3JlkgEJcHVibGlzaGVy" role="button">Google Map Location</a> -->
+      </div>
+</div>
+<!-- style="background: url(image4.jpg)" -->
+<div class="container-fluid">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4 text-center">
+        <img src="home1.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
+        <h2 style=" color:darkgreen;background-color:whitesmoke;">Handle Your Complaints</h2>
+        <!-- <h2 style=" color:rgb(168, 168, 168);background-color:whitesmoke;">Handle Your Complaints</h2> -->
+        <p style=" color:whitesmoke;background-color: rgb(56, 56, 67);">As you know nowdays robbery is very common in our streets so we provide you a very feasible option here to find your stolen things For read the procedure to register complaints of stolen things click on the button given below.</p>
+        <p><a style=" background-color: whitesmoke ;color:rgb(56, 56, 67) ;" class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4 text-center">
+        
+        <img src="home3.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
+        <h2 style=" background-color:darkgreen;color:whitesmoke;">Provide Online Challans</h2>
+        <p style=" color:whitesmoke;background-color:rgb(56, 56, 67);">In this modern era Our traffic wardens not update their challan form system so we also handle here challan form submission from the side of traffic wardens to make the challan system feasible and easy for them.</p>
+        <p><a style=" background-color: whitesmoke ;color:rgb(56, 56, 67) ;" class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4 text-center">
+        <img src="home2.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
+        <h2 style=" background-color:rgb(91, 160, 91);color:whitesmoke;">Make Things Secure </h2>
+        <p style=" color:whitesmoke;background-color:rgb(56, 56, 67);">In this Application we handle all the queries from te side of common person and traffic warden and provide all of them a secure envoirnment by different features to make things easy for both of our members.</p>
+        <p><a style=" background-color: whitesmoke ;color:rgb(56, 56, 67) ;" class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+</div>
+
+
+<footer class="container">
+    <hr>
+    <p class="float-right"><a style=" color: whitesmoke ;" href="#">Back to top</a></p>
+    <p style="color: whitesmoke;">&copy; 2021-2022 Zenith, Inc. &middot; <a style=" color: whitesmoke ;" href="#">Privacy</a> &middot; <a style=" color: whitesmoke ;" href="#">Terms</a></p>
+    <hr>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript! -->
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+
+  <!-- </div> -->
+</div>
+
+     
+<script>
+function openLeftMenu() {
+  document.getElementById("leftMenu").style.display = "block";
+}
+
+function closeLeftMenu() {
+  document.getElementById("leftMenu").style.display = "none";
+}
+
+function openRightMenu() {
+  document.getElementById("rightMenu").style.display = "block";
+}
+
+function closeRightMenu() {
+  document.getElementById("rightMenu").style.display = "none";
+}
+</script>
+     
+    
+</body>
+</html>

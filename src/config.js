@@ -1,0 +1,3 @@
+{
+    SECRET_kEY="mynameisfaizaamaniamastudentofwebbadluckbadluckbadluck";
+}

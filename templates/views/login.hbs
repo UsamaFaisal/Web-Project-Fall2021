@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <style>
+      body
+      {
+        background-color: #F3EBF6;
+        font-family: 'Ubuntu', sans-serif;
+      }
+      .main
+      {
+        background-color: #FFFFFF;
+        width: 400px;
+        height: 500px;
+        margin: 150px auto;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+      }
+      form.form1
+      {
+        padding-top: 40px;
+        margin-top: 50px;
+      }
+      .sign
+      {
+        padding-top: 40px;
+        color: #8C55AA;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: bold;
+        font-size: 23px;
+      }
+      .un
+      {
+        width: 76%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 46px;
+        text-align: center;
+        margin-bottom: 27px;
+        font-family: 'Ubuntu', sans-serif;
+        opacity: 100%;
+      }
+      .pw
+      {
+        width: 76%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        margin-bottom: 50px;
+        margin-left: 46px;
+        text-align: center;
+        margin-bottom: 27px;
+        font-family: 'Ubuntu', sans-serif;
+        opacity: 100%;
+      }
+      .login
+      {
+        cursor: pointer;
+        border-radius: 5em;
+        color: #fff;
+        background: linear-gradient(to right, #9C27B0, #E040FB);
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: 'Ubuntu', sans-serif;
+        margin-left: 35%;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+      }
+    </style>
+    <script>  
+      function validateform()
+      {
+        var name=document.myform.name.value;  
+        var password=document.myform.password.value;  
+        if (name==null || name=="")
+        {  
+          alert("Name can't be blank.");  
+          return false;  
+        }
+        else if(password.length<6)
+        {  
+          alert("Password should must be at least 6 characters long.");  
+          return false;  
+        }  
+      }  
+    </script>
+  </head>  
+  <body>
+    <div class="main">
+      <p class="sign" align="center">Login Form</p> 
+      <form class="form1" name="myform" action="\login" method="post" onsubmit="return validateform()"> 
+        <input class="un" type="email" align="center" name="Email" placeholder="email"> 
+        <input class="pw" type="password" align="center" name="Password" placeholder="Password">  
+      <input class="login" type="submit" value="login">
+      </form>
+    </div>
+  </body>
+</html>
