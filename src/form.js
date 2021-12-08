@@ -44,6 +44,10 @@ app.get("/secret",async(req,res)=>{
 
     res.render("secret");
 })
+app.get("/admin",async(req,res)=>{
+
+  res.render("admin");
+})
 app.get("/register",(req,res) => 
 {
   //  req.session? req.session++ : req.session=1;
@@ -121,14 +125,17 @@ app.post("/login",async (req,res) =>
   try{
     const Email=req.body.Email;
     const Password=req.body.Password;
-
+  if(Email==="admin@1.com" && Password==="admin")
+   {
+    res.status(201).redirect('/admin');
+   }
    const useremail=await Login.findOne({Email:Email});
    console.log(useremail.Password);
 
    console.log(Password);
 
    const com=await bcrypt.compare(Password,useremail.Password);
-   
+  
    const token=await useremail.generateAuthToken();
   
   console.log("Match = "  + com);
@@ -159,6 +166,7 @@ app.get("/secret",auth,async(req,res)=>{
     console.log("LOGOUT SUCCESSFULLY.");
     res.status(201).redirect('/login');
     await res.useremail.save();
+  
   //  res.render("login");
 
   } catch (error) {
