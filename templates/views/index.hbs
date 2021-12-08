@@ -1,182 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-<header>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-     <link rel="stylesheet" href="css/custom-style.css">
-     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-     <style>
-        body {
-   background-image: url('homenew1.jpg');
-   background-repeat: no-repeat;
-   background-attachment: fixed;  
-   background-size: cover;
- }
-   </style>
-    <title>Online Challan Farm</title>
-    {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
-    {{!-- <link rel="stylesheet" href="css/style.css"> --}}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-</header>
-<body>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	
+
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+	
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="assets/css/main.css">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body class="home">
     {{>navbar}}
     <!-- Sidebar -->
-<!--
- <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
-  <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-  <a href="/register" class="w3-bar-item w3-button">Traffic warden</a>
-</div> -->
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> -->
+				<label>Automated System</label>
+                <!-- <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a> -->
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="sidebar-left.html">Left Sidebar</a></li>
+							<li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
+						</ul>
+					</li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a class="btn" href="/login">SIGN IN </a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div> 
+	<!-- /.navbar -->
+
+	<!-- Header -->
+	<header id="head">
+		<div class="container">
+			<div class="row">
+				<h1 class="lead">Automated System</h1>
+				<p class="tagline">Automated System - Your Motives Our Desires.......<a href="http://www.gettemplate.com/?utm_source=progressus&amp;utm_medium=template&amp;utm_campaign=progressus">GetMembership</a></p>
+				<p><a class="btn btn-default btn-lg" role="button">MORE INFO</a> <a class="btn btn-action btn-lg" role="button" href="/login">LOGIN NOW</a></p>
+			</div>
+		</div>
+	</header>
+	<!-- /Header -->
+
+	<!-- Intro -->
+	<div class="container text-center">
+		<br> <br>
+		<h2 class="thin">The best place to tell people how they register complaints and get their Challans</h2>
+		<p class="text-muted">
+            This Application is here to facilitate you with modern features to make things easy and secure for you:<br> 
+            Our Help Your Need.Don't miss a Chance to Fulfill your needs.
+		</p>
+	</div>
+	<!-- /Intro-->
+		
+	<!-- Highlights - jumbotron -->
+	<div class="jumbotron top-space">
+		<div class="container">
+			
+			<h3 class="text-center thin">Reasons to be with us</h3>
+			
+			<div class="row">
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="fa fa-cogs fa-5"></i>Handle Your Complaints</h4></div>
+					<div class="h-body text-center">
+						<p>As you know nowdays robbery is very common in our streets so we provide you a very feasible option here to find your stolen things For read the procedure to register complaints of stolen things you must choose register complaint options.</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="fa fa-flash fa-5"></i>Provide Online Challans</h4></div>
+					<div class="h-body text-center">
+						<p> In this modern era Our traffic wardens not update their challan form system so we also handle here challan form submission from the side of traffic wardens to make the challan system feasible and easy for them. </p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="fa fa-heart fa-5"></i>Make Things Secure</h4></div>
+					<div class="h-body text-center">
+						<p>In this Application we handle all the queries from te side of common person and traffic warden and provide all of them a secure envoirnment by different features to make things easy for both of our members.</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption"><h4><i class="fa fa-smile-o fa-5"></i>Our's support</h4></div>
+					<div class="h-body text-center">
+						<p> Your appreciation, Our support!!! </p>
+					</div>
+				</div>
+			</div> <!-- /row  -->
+		
+		</div>
+	</div>
+	<!-- /Highlights -->
+
+	<!-- container -->
+	<div class="container">
+
+		<h2 class="text-center top-space">Frequently Asked Questions</h2>
+		<br>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<h3>How we see Our Challan Forms</h3>
+				<p>I'd highly recommend you <a href="/login">Login,Membership with Us</a> - a login you only have to give and see your challans on your laptops.!</p>
+			</div>
+			<div class="col-sm-6">
+				<h3>Nice Website. Where do I find my challans ?</h3>
+				<p>
+					Well, there are thousands of challans forms, but for you, 
+					you can see the your one's only after providing your login: <a href="/login">LOGIN,GET Membership</a> 
+					and <a href="/login">Complete Needs, Desires after Login.</a></p>
+			</div>
+		</div> <!-- /row -->
+
+		<div class="row">
+			<div class="col-sm-6">
+				<h3>Can I register Complaint at this site?</h3>
+				<p>
+					Yes, you can. You may use this website for any purpose, just don't forget about the CNIC and Stolen-Thing No, 
+					which says: "You must give appropriate CNIC and registered number of stolen things", i.e. you must provide the name of the Stolen-Thing and a date when the thing is stolen in your complaint. 
+				</p>
+			</div>
+			<div class="col-sm-6">
+				<h3>Can you provide receipt after paying challan for Customers Feasibility?</h3>
+				<p>Yes, we can. Please pay your challans if your name is in our challan list and after that we generate you a receipt of your paid amount.</p>
+			</div>
+		</div> <!-- /row -->
+
+		<div class="jumbotron top-space">
+			<h4>We helps you in all the matters, in all the circumstances when you have burden of work in manual challan system because we know that your needs, Your motives are actually our needs, our motives, We are available for you everytime when your things are stolen, we will try to find your things and handle your complaints in all the circumstances. </h4>
+     		<p class="text-right"><a class="btn btn-primary btn-large">Learn more »</a></p>
+  		</div>
+
+</div>	<!-- /container -->
+	
+	<!-- Social links. @TODO: replace by link/instructions in template -->
+	<section id="social">
+		<div class="container">
+			<div class="wrapper clearfix">
+				<!-- AddThis Button BEGIN -->
+				<div class="addthis_toolbox addthis_default_style">
+				<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+				<a class="addthis_button_tweet"></a>
+				<a class="addthis_button_linkedin_counter"></a>
+				<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+				</div>
+				<!-- AddThis Button END -->
+			</div>
+		</div>
+	</section>
+	<!-- /social links -->
+
+
+	<footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contact</h3>
+						<div class="widget-body">
+							<p>+234 23 9873237<br>
+								<a href="mailto:#">some.email@somewhere.com</a><br>
+								<br>
+								234 Hidden Pond Road, Ashland City, TN 37015
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Follow me</h3>
+						<div class="widget-body">
+							<p class="follow-me-icons">
+								<a href=""><i class="fa fa-twitter fa-2"></i></a>
+								<a href=""><i class="fa fa-dribbble fa-2"></i></a>
+								<a href=""><i class="fa fa-github fa-2"></i></a>
+								<a href=""><i class="fa fa-facebook fa-2"></i></a>
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<h3 class="widget-title">Our Desires</h3>
+						<div class="widget-body">
+							<p>Our Desire is to make you feel comfortable with our services and features, make you inform about the automated things, make you inform about tha advance and modern technology, make you feel good to give you an ease with our automated system.</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="simplenav">
+								<a href="#">Home</a> | 
+								<a href="about.html">About</a> |
+								<a href="sidebar-right.html">Sidebar</a> |
+								<a href="contact.html">Contact</a> |
+								<b><a href="/login">Sign In</a></b>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="text-right">
+								Copyright &copy; 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a> 
+							</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+	</footer>	
+		
 
 
 
-<div class="w3-container">
-  <button class="w3-button w3-teal w3-xlarge w3-left" onclick="openLeftMenu()">&#9776;</button>
-  <!-- <div class="w3-container"> -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Website</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/bootfile.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about.html">About</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Services
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/services.html">Stationary</a>
-                        <a class="dropdown-item" href="/services.html">other services</a>
-                        <!-- <div class="dropdown-divider"></div> -->
-                        <a class="dropdown-item" href="/services.html">Books</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact.html">Contact Us</a>
-                </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="/login">login</a>
-                </li>
-                 
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
-
-
-
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Your needs!</strong> Our work!
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-<div class="container-fluid mt-3">
-    <div class="jumbotron">
-        <h1 style=" color: rgb(56, 55, 55);" class="display-4">Welcome To Our Family!</h1>
-        <p class="lead">This Application is here to facilitate you with modern features to make things easy and secure for you .</p>
-        <hr class="my-4">
-        <p>Our Help Your Need.Don't miss a Chance to Fulfill your needs</p>
-        <!-- <a style=" background-color: darkred ;" class="btn btn-primary btn-lg" target="_blank" href="https://www.google.com/maps/place/BOOK+CENTRE/@31.5229294,74.2683242,12z/data=!4m9!1m2!2m1!1sbook+center+lahore!3m5!1s0x39191b530dc2bfa9:0xf623bce4c48ba683!8m2!3d31.5622247!4d74.3195044!15sChJib29rIGNlbnRlciBsYWhvcmVaFCISYm9vayBjZW50ZXIgbGFob3JlkgEJcHVibGlzaGVy" role="button">Google Map Location</a> -->
-      </div>
-</div>
-<!-- style="background: url(image4.jpg)" -->
-<div class="container-fluid">
-
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-      <div class="col-lg-4 text-center">
-        <img src="home1.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
-        <h2 style=" color:darkgreen;background-color:whitesmoke;">Handle Your Complaints</h2>
-        <!-- <h2 style=" color:rgb(168, 168, 168);background-color:whitesmoke;">Handle Your Complaints</h2> -->
-        <p style=" color:whitesmoke;background-color: rgb(56, 56, 67);">As you know nowdays robbery is very common in our streets so we provide you a very feasible option here to find your stolen things For read the procedure to register complaints of stolen things click on the button given below.</p>
-        <p><a style=" background-color: whitesmoke ;color:rgb(56, 56, 67) ;" class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4 text-center">
-        
-        <img src="home3.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
-        <h2 style=" background-color:darkgreen;color:whitesmoke;">Provide Online Challans</h2>
-        <p style=" color:whitesmoke;background-color:rgb(56, 56, 67);">In this modern era Our traffic wardens not update their challan form system so we also handle here challan form submission from the side of traffic wardens to make the challan system feasible and easy for them.</p>
-        <p><a style=" background-color: whitesmoke ;color:rgb(56, 56, 67) ;" class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4 text-center">
-        <img src="home2.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
-        <h2 style=" background-color:rgb(91, 160, 91);color:whitesmoke;">Make Things Secure </h2>
-        <p style=" color:whitesmoke;background-color:rgb(56, 56, 67);">In this Application we handle all the queries from te side of common person and traffic warden and provide all of them a secure envoirnment by different features to make things easy for both of our members.</p>
-        <p><a style=" background-color: whitesmoke ;color:rgb(56, 56, 67) ;" class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-</div>
-
-
-<footer class="container">
-    <hr>
-    <p class="float-right"><a style=" color: whitesmoke ;" href="#">Back to top</a></p>
-    <p style="color: whitesmoke;">&copy; 2021-2022 Zenith, Inc. &middot; <a style=" color: whitesmoke ;" href="#">Privacy</a> &middot; <a style=" color: whitesmoke ;" href="#">Terms</a></p>
-    <hr>
-  </footer>
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Optional JavaScript! -->
-    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
-        crossorigin="anonymous"></script>
-
-  <!-- </div> -->
-</div>
-
-     
-<script>
-function openLeftMenu() {
-  document.getElementById("leftMenu").style.display = "block";
-}
-
-function closeLeftMenu() {
-  document.getElementById("leftMenu").style.display = "none";
-}
-
-function openRightMenu() {
-  document.getElementById("rightMenu").style.display = "block";
-}
-
-function closeRightMenu() {
-  document.getElementById("rightMenu").style.display = "none";
-}
-</script>
-     
-    
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="assets/js/headroom.min.js"></script>
+	<script src="assets/js/jQuery.headroom.min.js"></script>
+	<script src="assets/js/template.js"></script>
 </body>
 </html>
