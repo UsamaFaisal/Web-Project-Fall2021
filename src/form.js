@@ -42,7 +42,9 @@ app.get("/",(req,res) =>
 })
 app.get("/secret",async(req,res)=>{
 
-    res.render("secret");
+    res.render("secret",{
+      Loginname: uname ,
+    });
 })
 app.get("/admin",async(req,res)=>{
 
@@ -86,6 +88,7 @@ try{
          cPassword:req.body.cPassword,
 
      })
+     
   //  return res.send("the success part" + loginPerson);
       
   const token=await loginPerson.generateAuthToken();
@@ -146,6 +149,8 @@ app.post("/login",async (req,res) =>
       expires:new Date(Date.now()+30000),
       httpOnly:true
     })
+    uname = useremail.uname;
+    console.log(uname);
     res.status(201).redirect('/secret');
    }
    else 
@@ -159,8 +164,10 @@ app.post("/login",async (req,res) =>
 
    }
 });
+
 app.get("/secret",auth,async(req,res)=>{
   try {
+    
     console.log(req.useremail);
     res.clearCookie("jwt");
     console.log("LOGOUT SUCCESSFULLY.");
