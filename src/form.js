@@ -133,6 +133,10 @@ app.post("/login",async (req,res) =>
     res.status(201).redirect('/admin');
    }
    const useremail=await Login.findOne({Email:Email});
+   if(!(useremail))
+   {
+    res.send("INVALID LOGIN DETAILS-");
+   }
    console.log(useremail.Password);
 
    console.log(Password);
