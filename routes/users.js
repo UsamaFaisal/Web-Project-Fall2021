@@ -11,6 +11,13 @@ router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
 
 // Register Page
 router.get('/register', forwardAuthenticated, (req, res) => res.render('register'));
+
+// Report Page
+router.get('/report', forwardAuthenticated, (req, res) => res.render('report'));
+
+// About Page
+router.get('/about', forwardAuthenticated, (req, res) => res.render('about'));
+
 // Dashboard of admin
 
 // Register
@@ -57,7 +64,7 @@ router.post('/register', (req, res) => {
               .then(user => {
                 req.flash(
                   'success_msg',
-                  'You are now registered and can log in'
+                  'You are now registered and can log in!'
                 );
                 res.redirect('/users/login');
               })
