@@ -26,9 +26,22 @@
       <h3 class="mt-4 text-primary">Warden Profile | Home</h3>
 <br><br>
 <div>
-<p class="lead mb-3">Name <%= user.fname %>       DOB <%= user.DOB %></p>
-<p class="lead mb-3">Gender: Male           CNIC <%= user.CNIC %>         Nationality: Pakistani  </p>
-<p class="lead mb-3">Email <%= user.email %>           Mobile no <%= user.num %></p>
+    <div class="row">
+        <div class="col-sm-4"><b>Name</b> <%= user.fname %> </div>
+        <div class="col-sm-8"><b>DOB </b> <%= user.DOB %></div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-4"><b>Gender</b> Male </div>
+        <div class="col-sm-4"><b>CNIC</b> <%= user.CNIC %> </div>
+        <div class="col-sm-4"></div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"><b>E-mail</b> <%= user.email %>  </div>
+        <div class="col-sm-4"><b> Mobile no</b> <%= user.num %></div>
+      </div>
 </div>
 
 <br><br>
@@ -37,19 +50,34 @@
     <div id="demo" class="collapse">
         <form action="/action_page.php">
             <div class="mb-3 mt-3">
-              <label for="email" class="form-label">Email:</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+              <label for="" class="form-label">Name:</label>
+              <input type="text" class="form-control" id="text" placeholder="Enter Name" name="name">
             </div>
-            <div class="mb-3">
-              <label for="pwd" class="form-label">Password:</label>
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
-            </div>
-            <div class="form-check mb-3">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="remember"> Remember me
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="mb-3 mt-3">
+                <label for="" class="form-label">Father's Name:</label>
+                <input type="text" class="form-control" id="text" placeholder="Enter Name" name="name">
+              </div>
+              <div class="mb-3 mt-3">
+                <label for="" class="form-label">CNIC:</label>
+                <input type="number" class="form-control" id="number" placeholder="Enter CNIC" name="CNIc">
+              </div>
+              <div class="mb-3 mt-3">
+                <label for="" class="form-label">Caste:</label>
+                <input type="text" class="form-control" id="text" placeholder="Enter caste" name="caste">
+              </div>
+              <div class="mb-3 mt-3">
+                <label for="" class="form-label">Vehicle Number:</label>
+                <input type="text" class="form-control" id="text" placeholder="Enter Bike Number" name="name">
+              </div>
+              <div class="mb-3 mt-3">
+                <label for="" class="form-label">Violation:</label>
+                <input type="text" class="form-control" id="text" placeholder="" name="name">
+              </div>
+              <div class="mb-3 mt-3">
+                <label for="" class="form-label">Fine:</label>
+                <input type="number" class="form-control" id="number" placeholder="" name="name">
+              </div>
+            <button type="submit" class="btn btn-primary">Generate</button>
           </form>
     </div>
   </div>
