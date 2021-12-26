@@ -5,7 +5,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
 const path=require("path");
-
+const nodemailer=require('nodemailer');
 const app = express();
 
 // Passport Config
@@ -50,6 +50,52 @@ app.use(function(req, res, next) {
 // Routes
 app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
+app.post('/send',(req,res)=>{
+  const output=`
+  <h3>CHALLAN DETAILS</h3>
+  <ul>
+  <li>Name:${req.body.name}</li>
+  <li>Father's Name:${req.body.faname}</li>
+  <li>CNIC:${req.body.cnic}</li>
+  <li>Caste:${req.body.caste}</li>
+  <li>Email:${req.body.email}</li>
+  <li>Vehicle Number:${req.body.vnumber}</li>
+  <li>Violation:${req.body.violation}</li>
+  <li>Fine:${req.body.fine}</li>
+  </ul>
+  `;
+  let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: 'usamashk530@gmail.com', // generated ethereal user
+      pass: 'alittlebaby', // generated ethereal password
+    },
+    tls:{
+      rejectUnauthorized:false
+    }
+  });
+
+  let mailoptions={
+    from: '"GOVT E-Challan" <usamashk530@gmail.com>', // sender address
+    to: req.body.email.toString(), // list of receivers
+    subject: "E_CHALLAN", // Subject line
+    text: "Hello world?", // plain text body
+    html:output, // html body
+  };
+  // send mail with defined transport object
+  transporter.sendMail(mailoptions,(error,info)=>{
+    if(error){
+      return console.log(error);
+    }
+    console.log('Message sent : %s',info.messageId);
+    console.log('Message sent : %s',nodemailer.getTestMessageUrl(info));
+  });
+  //{msg:'Challan Generated Successfully.'}
+//res.render('welcome',);
+res.render('welcome');
+})
 
 const PORT = process.env.PORT || 5000;
 
