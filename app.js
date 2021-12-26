@@ -58,7 +58,6 @@ app.post('/send',(req,res)=>{
   <li>Father's Name:${req.body.faname}</li>
   <li>CNIC:${req.body.cnic}</li>
   <li>Caste:${req.body.caste}</li>
-  <li>Email:${req.body.email}</li>
   <li>Vehicle Number:${req.body.vnumber}</li>
   <li>Violation:${req.body.violation}</li>
   <li>Fine:${req.body.fine}</li>
@@ -70,7 +69,7 @@ app.post('/send',(req,res)=>{
     secure: false, // true for 465, false for other ports
     auth: {
       user: 'usamashk530@gmail.com', // generated ethereal user
-      pass: '', // generated ethereal password
+      pass: 'alittlebaby', // generated ethereal password
     },
     tls:{
       rejectUnauthorized:false
@@ -94,7 +93,11 @@ app.post('/send',(req,res)=>{
   });
   //{msg:'Challan Generated Successfully.'}
 //res.render('welcome',);
-res.render('welcome');
+passport.authenticate('local', {
+  successRedirect: '/dashboard',
+  failureRedirect: '/users/login',
+  failureFlash: true
+})(req, res);
 })
 
 const PORT = process.env.PORT || 5000;
