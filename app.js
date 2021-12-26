@@ -70,7 +70,7 @@ app.post('/send',(req,res)=>{
     secure: false, // true for 465, false for other ports
     auth: {
       user: 'usamashk530@gmail.com', // generated ethereal user
-      pass: 'alittlebaby', // generated ethereal password
+      pass: '', // generated ethereal password
     },
     tls:{
       rejectUnauthorized:false
