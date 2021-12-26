@@ -15,6 +15,8 @@ router.get('/register', forwardAuthenticated, (req, res) => res.render('register
 // Report Page
 router.get('/report', forwardAuthenticated, (req, res) => res.render('report'));
 
+
+
 // About Page
 router.get('/about', forwardAuthenticated, (req, res) => res.render('about'));
 
