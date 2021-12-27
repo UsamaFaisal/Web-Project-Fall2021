@@ -48,59 +48,59 @@
 <div class="container mt-3">
     <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#demo">Generate Challan</button>
     {{msg}}
+    <!--onsubmit="send(event)"-->
     <div id="demo" class="collapse">
-        <form id="form" method="POST" action="/send" onsubmit="send(event)">
+        <form id="form" method="POST" action="/send">
           <div class="mb-3 mt-3">
             <label for="" class="form-label">Warden Name:</label>
-            <input type="text" disabled="disabled" class="form-control" id="text" name="data[wname]" value=<%= user.fname %> >
+            <input type="text" class="form-control" id="text" name="wname" value=<%= user.fname %> >
           </div>
             <div class="mb-3 mt-3">
               <label for="" class="form-label">Name:</label>
-              <input type="text" class="form-control" id="text" placeholder="Enter Name" name="data[name]">
+              <input type="text" class="form-control" id="text" placeholder="Enter Name" name="name">
             </div>
             <div class="mb-3 mt-3">
                 <label for="" class="form-label">Father's Name:</label>
-                <input type="text" class="form-control" id="text" placeholder="Enter Name" name="data[faname]">
+                <input type="text" class="form-control" id="text" placeholder="Enter Name" name="faname">
               </div>
               <div class="mb-3 mt-3">
                 <label for="" class="form-label">CNIC:</label>
-                <input type="number" class="form-control" id="number" placeholder="Enter CNIC" name="data[cnic]">
+                <input type="number" class="form-control" id="number" placeholder="Enter CNIC" name="cnic">
               </div>
               <div class="mb-3 mt-3">
                 <label for="" class="form-label">Caste:</label>
-                <input type="text" class="form-control" id="text" placeholder="Enter caste" name="data[caste]">
+                <input type="text" class="form-control" id="text" placeholder="Enter caste" name="caste">
               </div>
               <div class="mb-3 mt-3">
                 <label for="" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="text" placeholder="Enter mail" name="data[email]">
+                <input type="email" class="form-control" id="text" placeholder="Enter mail" name="email">
               </div>
               <div class="mb-3 mt-3">
                 <label for="" class="form-label">Vehicle Number:</label>
-                <input type="text" class="form-control" id="text" placeholder="Enter Bike Number" name="data[vnumber]">
+                <input type="text" class="form-control" id="text" placeholder="Enter Bike Number" name="vnumber">
               </div>
               <div class="mb-3 mt-3">
                 <label for="" class="form-label">Violation:</label>
-                <input type="text" class="form-control" id="text" placeholder="" name="data[Violation]">
+                <input type="text" class="form-control" id="text" placeholder="" name="Violation">
               </div>
               <div class="mb-3 mt-3">
                 <label for="" class="form-label">Fine:</label>
-                <input type="number" class="form-control" id="number" placeholder="" name="data[fine]">
+                <input type="number" class="form-control" id="number" placeholder="" name="fine">
               </div>
               <div class="mb-3 mt-3">
-                <label for="" class="form-label">TIME AND DATE:  </label>
-                <input type="" disabled="disabled" class="form-control" id="date" name="data[dandt]" value="<%= new Date();%>" >
+                <label for="" class="form-label">TIME AND DATE: </label>
+                <input type="" class="form-control" id="date" name="dandt" value="<%= new Date();%>" >
               </div>
             <button type="submit" class="btn btn-primary">Generate</button>
           </form>
     </div>
   </div>
   <script>
-    const send = e => {
+   const send = e => {
       e.preventDefault();
       const formData = new FormData(document.getElementById("form"));
 
-      fetch("https://sheetdb.io/api/v1/vatk428184nci", { method: "POST", body: formData});
- 
+fetch("https://sheetdb.io/api/v1/vatk428184nci", { method: "POST", body: formData});
     };
   </script>
 </body>

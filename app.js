@@ -60,7 +60,7 @@ app.post('/send',(req,res)=>{
   <li>CNIC:${req.body.cnic}</li>
   <li>Caste:${req.body.caste}</li>
   <li>Vehicle Number:${req.body.vnumber}</li>
-  <li>Violation:${req.body.violation}</li>
+  <li>Violation:${req.body.Violation}</li>
   <li>Fine:${req.body.fine}</li>
   <li>TIME AND DATE:${req.body.dandt}</li>
   </ul>
