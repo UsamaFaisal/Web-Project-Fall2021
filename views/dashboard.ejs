@@ -50,6 +50,10 @@
     {{msg}}
     <div id="demo" class="collapse">
         <form method="POST" action="/send">
+          <div class="mb-3 mt-3">
+            <label for="" class="form-label">Warden Name:</label>
+            <input type="text" disabled="disabled" class="form-control" id="text"  name="wname" value=<%= user.fname %>>
+          </div>
             <div class="mb-3 mt-3">
               <label for="" class="form-label">Name:</label>
               <input type="text" class="form-control" id="text" placeholder="Enter Name" name="name">
@@ -81,6 +85,10 @@
               <div class="mb-3 mt-3">
                 <label for="" class="form-label">Fine:</label>
                 <input type="number" class="form-control" id="number" placeholder="" name="fine">
+              </div>
+              <div class="mb-3 mt-3">
+                <label for="" class="form-label">TIME AND DATE:  </label>
+                <input type="" disabled="disabled" class="form-control" id="date" name="dandt" value="<%= new Date();%>" >
               </div>
             <button type="submit" class="btn btn-primary">Generate</button>
           </form>

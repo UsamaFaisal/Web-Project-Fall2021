@@ -54,6 +54,7 @@ app.post('/send',(req,res)=>{
   const output=`
   <h3>CHALLAN DETAILS</h3>
   <ul>
+  <li>Signed by:${req.body.wname}</li>
   <li>Name:${req.body.name}</li>
   <li>Father's Name:${req.body.faname}</li>
   <li>CNIC:${req.body.cnic}</li>
@@ -61,10 +62,11 @@ app.post('/send',(req,res)=>{
   <li>Vehicle Number:${req.body.vnumber}</li>
   <li>Violation:${req.body.violation}</li>
   <li>Fine:${req.body.fine}</li>
+  <li>TIME AND DATE:${req.body.dandt}</li>
   </ul>
   `;
   let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+   host:"smtp.gmail.com",
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
