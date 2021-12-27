@@ -26,7 +26,7 @@ const UserSchema = new mongoose.Schema({
     },
     CNIC:
     {
-        type:Number,
+        type:String,
         required:true,
         unique:true
     },
