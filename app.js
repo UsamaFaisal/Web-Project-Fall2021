@@ -6,6 +6,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const path=require("path");
 const nodemailer=require('nodemailer');
+const Challan = require('../menbackend/models/challan');
 const app = express();
 
 // Passport Config
@@ -52,7 +53,7 @@ app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
 app.post('/send',(req,res)=>{
 
-  console.log(req, res);
+  //console.log(req, res);
   const output=`
   <h3>CHALLAN DETAILS</h3>
   <ul>
@@ -94,6 +95,14 @@ app.post('/send',(req,res)=>{
     console.log('Message sent : %s',info.messageId);
     console.log('Message sent : %s',nodemailer.getTestMessageUrl(info));
   });
+
+
+  const { wname,name,faname, cnic,caste,email,vnumber,Violation,fine,dandt } = req.body;
+  const newchallan = new Challan 
+  ({
+    wname,name,faname, cnic,caste, email,vnumber,Violation,fine,dandt
+  });
+  newchallan.save();
   //{msg:'Challan Generated Successfully.'}
 //res.render('welcome',);
 passport.authenticate('local', {
