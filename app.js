@@ -51,6 +51,8 @@ app.use(function(req, res, next) {
 app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
 app.post('/send',(req,res)=>{
+
+  console.log(req, res);
   const output=`
   <h3>CHALLAN DETAILS</h3>
   <ul>
@@ -77,7 +79,7 @@ app.post('/send',(req,res)=>{
       rejectUnauthorized:false
     }
   });
-
+ 
   let mailoptions={
     from: '"GOVT E-Challan" <usamashk530@gmail.com>', // sender address
     to: req.body.email.toString(), // list of receivers
@@ -90,6 +92,7 @@ app.post('/send',(req,res)=>{
     if(error){
       return console.log(error);
     }
+     
     console.log('Message sent : %s',info.messageId);
     console.log('Message sent : %s',nodemailer.getTestMessageUrl(info));
   });
@@ -101,6 +104,7 @@ passport.authenticate('local', {
   failureFlash: true
 })(req, res);
 })
+
 
 const PORT = process.env.PORT || 5000;
 
