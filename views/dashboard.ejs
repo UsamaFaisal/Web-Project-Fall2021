@@ -111,17 +111,15 @@
 
 
   <script>
-
-
-   
     $('form').submit(function(e){
     e.preventDefault();
     const formData = new FormData(document.getElementById("form"));
       fetch("https://sheetdb.io/api/v1/vatk428184nci", { method: "POST", body: formData});
       setTimeout(function(e) {
-        this.submit();
+        
       }, 1500);
       
+      this.submit();
 
     });
   </script>
