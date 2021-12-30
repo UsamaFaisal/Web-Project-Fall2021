@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 // Load User model
+var challanss = require('../models/challan');
 const User = require('../models/User');
 const { forwardAuthenticated } = require('../config/auth');
 
@@ -11,10 +12,22 @@ router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
 
 // Register Page
 
+router.get('/allchallans', function(req, res, next) {
+      
+  challanss.find((err, docs) => {
+      if (!err) {
+          res.render("allchallans", {
+              data: docs
+          });
+      } else {
+          console.log('Failed to retrieve the Course List: ' + err);
+      }
+  });
 
+});
 // Report Page
 router.get('/report', forwardAuthenticated, (req, res) => res.render('report'));
-
+router.get('/allchallans', (req, res) => res.render('allchallans'));
 
 
 // About Page
