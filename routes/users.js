@@ -5,6 +5,7 @@ const passport = require('passport');
 // Load User model
 var challanss = require('../models/challan');
 const User = require('../models/User');
+const Reportt=require('../models/report');
 const { forwardAuthenticated } = require('../config/auth');
 
 // Login Page
@@ -25,8 +26,30 @@ router.get('/allchallans', function(req, res, next) {
   });
 
 });
+router.get('/allreports', function(req, res, next) {
+      
+  Reportt.find((err, docs) => {
+      if (!err) {
+          res.render("allreports", {
+              data: docs
+          });
+      } else {
+          console.log('Failed to retrieve the Course List: ' + err);
+      }
+  });
+
+});
 // Report Page
 router.get('/report', forwardAuthenticated, (req, res) => res.render('report'));
+router.post('/report', forwardAuthenticated, (req, res) => {
+  const { rname,rcnic, remail,rep}=req.body;
+  const newreport = new Reportt({
+    rname,rcnic, remail,rep
+  });
+newreport.save();
+  res.render('report')
+});
+
 router.get('/allchallans', (req, res) => res.render('allchallans'));
 
 
@@ -106,9 +129,7 @@ router.post('/login', (req, res, next) => {
  
 if(Emaill=='admin@1.com' && password=='admin')
 {
-  console.log("aya 1");
   router.get('/secret', (req, res) =>{
-    console.log("usamaaa"),
     res.render('secret')})
     router.get('/register',(req,res)=>res.render('register'))
     res.redirect('secret');

@@ -72,26 +72,28 @@
 					We’d love to hear from you. Do you have something to report? Fill out the form below with proper info about the problem and we will get back to you as soon as we can.
 				</p>
 				<br>
-					<form action="https://sheetdb.io/api/v1/3dv0797sosze4" method="post" id="sheetdb-form">
+					<form action="/users/report" method="post">
 						<div class="row">
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Enter CNIC" name="data[CNIC]" required>
+								<input class="form-control" type="text" placeholder="Enter Name" name="rname" required>
 							</div>
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Enter name" name="data[name]" required>
+								<input class="form-control" type="text" placeholder="Enter CNIC" name="rcnic" required>
 							</div>
-							
+							<div class="col-sm-4">
+								<input class="form-control" type="text" placeholder="Enter Email" name="remail" required>
+							</div>
 						</div>
 						<br>
 						<div class="row">
 							<div class="col-sm-12">
-								<textarea placeholder="Enter your Complaints" name="data[Report]" class="form-control" rows="9"></textarea>
+								<textarea placeholder="Enter your Complaints" name="rep" class="form-control" rows="9"></textarea>
 							</div>
 						</div>
 						<br>
 						<div class="row">
 							<div class="col-sm-6 text-right">
-								<input class="btn btn-action" type="submit"  value="Report">
+								<button class="btn btn-action" type="submit">Submit</button>
 							</div>
 						</div>
 					</form>
