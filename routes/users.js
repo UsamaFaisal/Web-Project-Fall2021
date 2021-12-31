@@ -6,14 +6,14 @@ const passport = require('passport');
 var challanss = require('../models/challan');
 const User = require('../models/User');
 const Reportt=require('../models/report');
-const { forwardAuthenticated } = require('../config/auth');
+const { ensureAuthenticated,forwardAuthenticated } = require('../config/auth');
 
 // Login Page
 router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
 
 // Register Page
 
-router.get('/allchallans', function(req, res, next) {
+router.get('/allchallans',ensureAuthenticated, function(req, res, next) {
       
   challanss.find((err, docs) => {
       if (!err) {
@@ -26,7 +26,7 @@ router.get('/allchallans', function(req, res, next) {
   });
 
 });
-router.get('/allreports', function(req, res, next) {
+router.get('/allreports', ensureAuthenticated,function(req, res, next) {
       
   Reportt.find((err, docs) => {
       if (!err) {
@@ -50,7 +50,7 @@ newreport.save();
   res.render('report')
 });
 
-router.get('/allchallans', (req, res) => res.render('allchallans'));
+router.get('/allchallans',ensureAuthenticated, (req, res) => res.render('allchallans'));
 
 
 // About Page
@@ -120,8 +120,9 @@ router.post('/register', (req, res) => {
   }) 
 );*/
 // Login
-
-
+router.get('/secret',ensureAuthenticated, (req, res) =>{
+  res.render('secret')})
+router.get('/register',ensureAuthenticated,(req,res)=>res.render('register'))
 router.post('/login', async(req, res, next) => {
  
    const password=req.body.password;
@@ -131,10 +132,15 @@ router.post('/login', async(req, res, next) => {
  if((bcrypt.compare(password , isMatchemail.password)) && (isMatchemail.isAdmin == "admin")){
 
    const result = await User.find();
-     router.get('/secret', (req, res) =>{
-     res.render('secret')})
-     router.get('/register',(req,res)=>res.render('register'))
-     res.redirect('secret');
+   passport.authenticate('local', {
+    successRedirect: '/users/secret',
+    failureRedirect: '/users/login',
+    failureFlash: true
+  })(req, res, next);
+    // router.get('/secret', (req, res) =>{
+     //res.render('secret')})
+     //router.get('/register',(req,res)=>res.render('register'))
+     //res.redirect('secret');
 
 }else if((bcrypt.compare(password , isMatchemail.password)) && (isMatchemail.isAdmin == "user")){
   
