@@ -47,6 +47,11 @@ const UserSchema = new mongoose.Schema({
         type:String,
        
     },
+    isAdmin:
+    {
+      type:String,
+      required:true,
+    },
     messages :[{
        type:String,
     }]

@@ -71,9 +71,9 @@ router.post('/register', (req, res) => {
     errors.push({ msg: 'Passwords do not match' });
   }
 
-  if (password.length < 6) {
-    errors.push({ msg: 'Password must be at least 6 characters' });
-  }
+ // if (password.length < 6) {
+   // errors.push({ msg: 'Password must be at least 6 characters' });
+  //}
 
   if (errors.length > 0) {
     res.render('register', {
@@ -91,7 +91,7 @@ router.post('/register', (req, res) => {
         });
       } else {
         const newUser = new User({
-          fname,uname, email,DOB,CNIC,num, password
+          fname,uname, email,DOB,CNIC,num, password,isAdmin:"user"
         });
 
         bcrypt.genSalt(10, (err, salt) => {
@@ -122,12 +122,34 @@ router.post('/register', (req, res) => {
 // Login
 
 
-router.post('/login', (req, res, next) => {
+router.post('/login', async(req, res, next) => {
  
    const password=req.body.password;
-  const Emaill=req.body.email;
- 
-if(Emaill=='admin@1.com' && password=='admin')
+   const Emaill=req.body.email;
+   
+ const isMatchemail = await User.findOne({email:Emaill});
+ if((bcrypt.compare(password , isMatchemail.password)) && (isMatchemail.isAdmin == "admin")){
+
+   const result = await User.find();
+     router.get('/secret', (req, res) =>{
+     res.render('secret')})
+     router.get('/register',(req,res)=>res.render('register'))
+     res.redirect('secret');
+
+}else if((bcrypt.compare(password , isMatchemail.password)) && (isMatchemail.isAdmin == "user")){
+  
+   passport.authenticate('local', {
+     successRedirect: '/dashboard',
+     failureRedirect: '/users/login',
+     failureFlash: true
+   })(req, res, next);
+ }
+
+
+
+
+
+/*if(Emaill=='admin@1.com' && password=='admin')
 {
   router.get('/secret', (req, res) =>{
     res.render('secret')})
@@ -145,7 +167,7 @@ else
     failureFlash: true
   })(req, res, next);
 }
-
+*/
 
 
 });
