@@ -40,15 +40,8 @@
 				<ul class="nav navbar-nav pull-right">
 					<li><a href="/">Home</a></li>
 					<li><a href="/users/about">About</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="sidebar-left.html">Left Sidebar</a></li>
-							<li><a href="sidebar-right.html">Right Sidebar</a></li>
-						</ul>
-					</li>
-					<li class="active"><a>Report</a></li>
-					<li><a class="btn" href="/users/login">SIGN IN</a></li>
+					<li class="active"><a href="#">Report</a></li>
+					<li><a class="btn" href="/users/login">Log In</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -58,8 +51,6 @@
 
 	<!-- container -->
 	<div class="container">
-
-
 		<div class="row">
 			
 			<!-- Article main content -->
@@ -78,16 +69,16 @@
 								<input class="form-control" type="text" placeholder="Enter Name" name="rname" required>
 							</div>
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Enter CNIC" name="rcnic" required>
+								<input class="form-control" minlength="15" maxlength="15" pattern="^\d{5}-\d{7}-\d{1}$" type="text" placeholder="Enter CNIC" name="rcnic" required>
 							</div>
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Enter Email" name="remail" required>
+								<input class="form-control" type="email" placeholder="Enter Email" name="remail" required>
 							</div>
 						</div>
 						<br>
 						<div class="row">
 							<div class="col-sm-12">
-								<textarea placeholder="Enter your Complaints" name="rep" class="form-control" rows="9"></textarea>
+								<textarea placeholder="Enter your Complaints" name="rep" class="form-control" rows="9" required></textarea>
 							</div>
 						</div>
 						<br>
@@ -157,7 +148,8 @@
 					<div class="col-md-6 widget">
 						<h3 class="widget-title">Our Desires</h3>
 						<div class="widget-body">
-							<p>Our desire is to make you feel comfortable with our services and features, make you inform about the automated things, make you inform about the advance and modern technology, make you feel good to give you an ease with our automated system.</p>
+							<p>Our desire is to make you feel comfortable with our services and features, make you inform about the automated things, make you inform about the advance and modern technology, make you feel good <br>
+								to give you an ease with our automated system.</p>
 						</div>
 					</div>
 
@@ -174,17 +166,8 @@
 							<p class="simplenav">
 								<a href="/">Home</a> | 
 								<a href="/users/about">About</a> |
-								<a href="sidebar-right.html">Sidebar</a> |
-								<a>Report</a> |
-								<b><a href="/users/login">Sign In</a></b>
-							</p>
-						</div>
-					</div>
-
-					<div class="col-md-6 widget">
-						<div class="widget-body">
-							<p class="text-right">
-								Copyright &copy; 2021, Designed by Web Project Group<br> 
+								<a href="#">Report</a> |
+								<b><a href="/users/login">Log In</a></b>
 							</p>
 						</div>
 					</div>

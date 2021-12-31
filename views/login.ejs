@@ -1,104 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-      body
-      {
-        background-color: #F3EBF6;
-        font-family: 'Ubuntu', sans-serif;
-      }
-      .main
-      {
-        background-color: #FFFFFF;
-        width: 400px;
-        height: 500px;
-        margin: 150px auto;
-        border-radius: 1.5em;
-        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
-      }
-      form.form1
-      {
-        padding-top: 40px;
-        margin-top: 50px;
-      }
-      .sign
-      {
-        padding-top: 40px;
-        color: #8C55AA;
-        font-family: 'Ubuntu', sans-serif;
-        font-weight: bold;
-        font-size: 23px;
-      }
-      .un
-      {
-        width: 76%;
-        color: rgb(38, 50, 56);
-        font-weight: 700;
-        font-size: 14px;
-        letter-spacing: 1px;
-        background: rgba(136, 126, 126, 0.04);
-        padding: 10px 20px;
-        border: none;
-        border-radius: 20px;
-        outline: none;
-        box-sizing: border-box;
-        border: 2px solid rgba(0, 0, 0, 0.02);
-        margin-top: 50px;
-        margin-bottom: 50px;
-        margin-left: 46px;
-        text-align: center;
-        margin-bottom: 27px;
-        font-family: 'Ubuntu', sans-serif;
-        opacity: 100%;
-      }
-      .pw
-      {
-        width: 76%;
-        color: rgb(38, 50, 56);
-        font-weight: 700;
-        font-size: 14px;
-        letter-spacing: 1px;
-        background: rgba(136, 126, 126, 0.04);
-        padding: 10px 20px;
-        border: none;
-        border-radius: 20px;
-        outline: none;
-        box-sizing: border-box;
-        border: 2px solid rgba(0, 0, 0, 0.02);
-        margin-bottom: 50px;
-        margin-left: 46px;
-        text-align: center;
-        margin-bottom: 27px;
-        font-family: 'Ubuntu', sans-serif;
-        opacity: 100%;
-      }
-      .login
-      {
-        cursor: pointer;
-        border-radius: 5em;
-        color: #fff;
-        background: linear-gradient(to right, #9C27B0, #E040FB);
-        border: 0;
-        padding-left: 40px;
-        padding-right: 40px;
-        padding-bottom: 10px;
-        padding-top: 10px;
-        font-family: 'Ubuntu', sans-serif;
-        margin-left: 35%;
-        font-size: 13px;
-        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-      }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
     
-  </head>  
-  <body>
-    <div class="main">
-      <p class="sign" align="center">Login Form</p> 
-      <form class="form1" name="myform" action="\users\login" method="post" onsubmit="return validateform()"> 
-        <input class="un" type="email" align="center" name="email" placeholder="email"> 
-        <input class="pw" minlength="5" type="password" align="center" name="password" placeholder="password">  
-      <input class="login" type="submit" value="login">
-      </form>
-    </div>
-  </body>
+    <title>Log In</title>
+  
+    <link rel="shortcut icon" href="assets/images/gt_favicon.png">
+    
+    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css" />
+  
+    <!-- Custom styles for our template -->
+    <link rel="stylesheet" href="/css/bootstrap-theme.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="/css/main.css" type="text/css" />
+  
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- <link  href="users/login" > -->
+  </head>
+  
+<body>
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> -->
+				<!-- <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>-->
+				<label><h3>Automated System</h3></label>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li><a href="/">Home</a></li>
+					<li><a href="/users/about">About</a></li>
+					<li><a href="/users/report">Report</a></li>
+					<li class="active"><a class="btn" href="#">Log In</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div> 
+	<!-- /.navbar -->
+
+	<header id="head" class="secondary"></header>
+
+	<!-- container -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="/">Home</a></li>
+			<li class="active">Warden access</li>
+		</ol>
+
+		<div class="row">
+			
+			<!-- Article main content -->
+			<article class="col-xs-12 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Log in</h1>
+				</header>
+				
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center">Log in to your account</h3>
+							
+							<form name="myForm" action="\users\login" method="post" onsubmit="return validateform()">
+								<div class="top-margin">
+									<label>E-mail <span class="text-danger">*</span></label>
+									<input type="email" class="form-control" placeholder="email" name="email" >
+								</div>
+								<div class="top-margin">
+									<label>Password <span class="text-danger">*</span></label>
+									<input minlength="5" type="password" name="password" class="form-control" placeholder="password">
+								</div>
+
+								<hr>
+
+								<div class="row">
+                  <div class="col-lg-4">                        
+									</div>
+									<div class="col-lg-4 text-right">
+									<button class="btn btn-action" type="submit">Log in</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+				
+			</article>
+			<!-- /Article -->
+
+		</div>
+	</div>	<!-- /container -->
+	
+
+	<footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contact</h3>
+						<div class="widget-body">
+							<a href="mailto:#">f190121@cfd.nu.edu.pk</a><br>
+							<a href="mailto:#">f190321@cfd.nu.edu.pk</a><br>
+							<a href="mailto:#">f190308@cfd.nu.edu.pk</a><br>
+							<br>
+							FAST NUCES CFD Campus, Chiniot Faisalabad Road, Chiniot.	
+						</div>
+					</div>
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Follow US</h3>
+						<div class="widget-body">
+							<p class="follow-me-icons clearfix">
+								<a href=""><i class="fa fa-twitter fa-2"></i></a>
+								<a href=""><i class="fa fa-dribbble fa-2"></i></a>
+								<a href=""><i class="fa fa-github fa-2"></i></a>
+								<a href=""><i class="fa fa-facebook fa-2"></i></a>
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<h3 class="widget-title">Our Desires</h3>
+						<div class="widget-body">
+							<p>Our desire is to make you feel comfortable with our services and features, make you inform about the automated things, make you inform about the advance and modern technology, make you feel good <br>
+								to give you an ease with our automated system.</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="simplenav">
+								<a href="/">Home</a> | 
+								<a href="users/about">About</a> |
+								<a href="users/report">Report</a> |
+								<b><a href="#">Log In</a></b>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="text-right">
+								Copyright &copy; 2021, Designed by Web Project Group<br> 
+							</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+	</footer>	
+		
+
+
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="assets/js/headroom.min.js"></script>
+	<script src="assets/js/jQuery.headroom.min.js"></script>
+	<script src="assets/js/template.js"></script>
+</body>
 </html>

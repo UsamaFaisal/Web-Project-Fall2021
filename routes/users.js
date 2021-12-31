@@ -123,7 +123,7 @@ router.post('/register', (req, res) => {
                   'success_msg',
                   'You are now registered and can log in!'
                 );
-                res.redirect('/users/login');
+                res.redirect('/users/register');
               })
               .catch(err => console.log(err));
           });
@@ -140,7 +140,7 @@ router.post('/register', (req, res) => {
 // Login
 router.get('/secret',ensureAuthenticated, (req, res) =>{
   res.render('secret')})
-router.get('/register',ensureAuthenticated,(req,res)=>res.render('register'))
+router.get('/register', ensureAuthenticated, (req,res)=>res.render('register'))
 router.post('/login', async(req, res, next) => {
  
    const password=req.body.password;

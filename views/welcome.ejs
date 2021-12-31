@@ -5,7 +5,7 @@
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	
-	<title>Home</title>
+	<title>Home Page</title>
 
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
 	
@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
 	<!-- Custom styles for our template -->
-	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
 	<link rel="stylesheet" href="assets/css/main.css">
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -24,8 +24,8 @@
 	<![endif]-->
 </head>
 
-<body class="home">
-    <!--{{>navbar}}-->
+<body>
+	<header id="head" class="secondary"></header>
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
@@ -37,17 +37,10 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a>Home</a></li>
+					<li class="active"><a href="#">Home</a></li>
 					<li><a href="users/about">About</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="sidebar-left.html">Left Sidebar</a></li>
-							<li><a href="sidebar-right.html">Right Sidebar</a></li>
-						</ul>
-					</li>
 					<li><a href="users/report">Report</a></li>
-					<li><a class="btn" href="users/login">SIGN IN</a></li>
+					<li><a class="btn" href="users/login">Log In</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -64,7 +57,6 @@
 			</div>
 		</div>
 	</header>
-
 	<!-- /Header -->
 
 	<!-- Intro -->
@@ -72,8 +64,8 @@
 		<br> <br>
 		<h2 class="thin">The best place to tell people how they register complaints and get their Challans</h2>
 		<p class="text-muted">
-            This Application is here to facilitate you with modern features to make things easy and secure for you.<br> 
-            Our Help Your Need. Don't miss a Chance to Fulfil your needs.
+			This Application is here to facilitate you with modern features to make things easy and secure for you.<br> 
+            Our Help Your Need. Don't miss a chance to Fulfil your needs.
 		</p>
 	</div>
 	<!-- /Intro-->
@@ -82,7 +74,7 @@
 	<div class="jumbotron top-space">
 		<div class="container">
 			
-			<h3 class="text-center thin">Reasons to be with us:</h3>
+			<h3 class="text-center thin">Reasons to be with us</h3>
 			
 			<div class="row">
 				<div class="col-md-3 col-sm-6 highlight">
@@ -94,7 +86,7 @@
 				<div class="col-md-3 col-sm-6 highlight">
 					<div class="h-caption"><h4><i class="fa fa-flash fa-5"></i>Provide Online Challans</h4></div>
 					<div class="h-body text-center">
-						<p> In this modern era our traffic wardens not update their challan form system so we also handle here challan form submission from the side of traffic wardens to make the challan system feasible and easy for them. </p>
+						<p> In this modern era our traffic wardens do not update their challan form system so we also handle here challan form submission from the side of traffic wardens to make the challan system feasible and easy for them. </p>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
@@ -104,9 +96,9 @@
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><h4><i class="fa fa-smile-o fa-5"></i>Our's support</h4></div>
+					<div class="h-caption"><h4><i class="fa fa-smile-o fa-5"></i>Our Support</h4></div>
 					<div class="h-body text-center">
-						<p> Your appreciation, Our support!!! </p>
+						<p> Your appreciation is our support! </p>
 					</div>
 				</div>
 			</div> <!-- /row  -->
@@ -123,35 +115,18 @@
 
 		<div class="row">
 			<div class="col-sm-6">
-				<h3>How we see Our Challan Forms</h3>
-				<p>I'd highly recommend you <a href="/login">Login,Membership with Us</a> - a login you only have to give and see your challans on your laptops.!</p>
-			</div>
-			<div class="col-sm-6">
-				<h3>Nice Website. Where do I find my challans ?</h3>
-				<p>
-					Well, there are thousands of challans forms, but for you, 
-					you can see the your one's only after providing your login: <a href="/login">LOGIN,GET Membership</a> 
-					and <a href="/login">Complete Needs, Desires after Login.</a></p>
-			</div>
-		</div> <!-- /row -->
-
-		<div class="row">
-			<div class="col-sm-6">
 				<h3>Can I register Complaint at this site?</h3>
-				<p>
-					Yes, you can. You may use this website for any purpose, just don't forget about the CNIC and Stolen-Thing No, 
-					which says: "You must give appropriate CNIC and registered number of stolen things", i.e. you must provide the name of the Stolen-Thing and a date when the thing is stolen in your complaint. 
-				</p>
+				<p>Yes, you can. You may use this website for registering your complaints. And for this, you must give appropriate CNIC and registered number of stolen things", i.e. you must provide the name of the stolen-thing and a date when the thing is stolen in your complaint.</p>
 			</div>
 			<div class="col-sm-6">
 				<h3>Can you provide receipt after paying challan for Customers Feasibility?</h3>
 				<p>Yes, we can. Please pay your challans if your name is in our challan list and after that we generate you a receipt of your paid amount.</p>
+					
 			</div>
 		</div> <!-- /row -->
 
 		<div class="jumbotron top-space">
 			<h4>We helps you in all the matters, in all the circumstances when you have burden of work in manual challan system because we know that your needs, Your motives are actually our needs, our motives, We are available for you everytime when your things are stolen, we will try to find your things and handle your complaints in all the circumstances. </h4>
-     		<p class="text-right"><a class="btn btn-primary btn-large">Learn more »</a></p>
   		</div>
 
 </div>	<!-- /container -->
@@ -221,9 +196,8 @@
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="simplenav">
-								<a>Home</a> | 
+								<a href="#">Home</a> | 
 								<a href="users/about">About</a> |
-								<a href="sidebar-right.html">Sidebar</a> |
 								<a href="users/report">Report</a> |
 								<b><a href="users/login">Sign In</a></b>
 							</p>

@@ -1,209 +1,110 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-    <meta charset="UTF-8">
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins',sans-serif;
-}
-body{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background: linear-gradient(135deg, #71b7e6, #404041);
-}
-.container{
-  max-width: 700px;
-  width: 100%;
-  background-color: #fff;
-  padding: 25px 30px;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-}
-.container .title{
-  font-size: 25px;
-  font-weight: 500;
-  position: relative;
-}
-.container .title::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 30px;
-  border-radius: 5px;
-  background: linear-gradient(135deg, #71b7e6, #404041);
-}
-.content form .user-details{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px 0 12px 0;
-}
-form .user-details .input-box{
-  margin-bottom: 15px;
-  width: calc(100% / 2 - 20px);
-}
-form .input-box span.details{
-  display: block;
-  font-weight: 500;
-  margin-bottom: 5px;
-}
-.user-details .input-box input{
-  height: 45px;
-  width: 100%;
-  outline: none;
-  font-size: 16px;
-  border-radius: 5px;
-  padding-left: 15px;
-  border: 1px solid #ccc;
-  border-bottom-width: 2px;
-  transition: all 0.3s ease;
-}
-.user-details .input-box input:focus,
-.user-details .input-box input:valid{
-  border-color: #404041;
-}
- form .gender-details .gender-title{
-  font-size: 20px;
-  font-weight: 500;
- }
- form .category{
-   display: flex;
-   width: 80%;
-   margin: 14px 0 ;
-   justify-content: space-between;
- }
- form .category label{
-   display: flex;
-   align-items: center;
-   cursor: pointer;
- }
- form .category label .dot{
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
-  margin-right: 10px;
-  background: #d9d9d9;
-  border: 5px solid transparent;
-  transition: all 0.3s ease;
-}
- #dot-1:checked ~ .category label .one,
- #dot-2:checked ~ .category label .two,
- #dot-3:checked ~ .category label .three{
-   background: #404041;
-   border-color: #d9d9d9;
- }
- form input[type="radio"]{
-   display: none;
- }
- form .button{
-   height: 45px;
-   margin: 35px 0
- }
- form .button input{
-   height: 100%;
-   width: 100%;
-   border-radius: 5px;
-   border: none;
-   color: #fff;
-   font-size: 18px;
-   font-weight: 500;
-   letter-spacing: 1px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   background: linear-gradient(135deg, #71b7e6, #404041);
- }
- form .button input:hover{
-  /* transform: scale(0.99); */
-  background: linear-gradient(-135deg, #71b7e6, #404041);
-  }
- @media(max-width: 584px){
- .container{
-  max-width: 100%;
-}
-form .user-details .input-box{
-    margin-bottom: 15px;
-    width: 100%;
-  }
-  form .category{
-    width: 100%;
-  }
-  .content form .user-details{
-    max-height: 300px;
-    overflow-y: scroll;
-  }
-  .user-details::-webkit-scrollbar{
-    width: 5px;
-  }
-  }
-  @media(max-width: 459px){
-  .container .content .category{
-    flex-direction: column;
-  }
-}
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+		
+		<title>Register</title>
+	
+		<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+		
+		<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+		<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
+		<link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css" />
+	
+		<!-- Custom styles for our template -->
+		<link rel="stylesheet" href="/css/bootstrap-theme.css" media="screen" type="text/css" />
+		<link rel="stylesheet" href="/css/main.css" type="text/css" />
+	
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
 
-  </style>
-   
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
 <body>
-  <div class="container">
-    <div class="title">Registration</div>
-    <div class="content">
-      
-      
+	<!-- container -->
+	<div class="container">
 
-      <form action="/users/register" method="post">
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" name="fname" value="<% typeof fname != 'undefined' ? fname: '' %>" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Username</span>
-            <input type="text" placeholder="Enter your username" id="uname" name="uname" value="<% typeof uname != 'undefined' ? uname: '' %>" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Email</span>
-            <input type="email" placeholder="Email" value="<% typeof email != 'undefined' ? email: '' %>" id="email" name="email"required>
-          </div>
-          <div class="input-box">
-            <span class="details">Date of Birth</span>
-            <input type="date" placeholder="Enter your number" id="DOB" name="DOB" value="<% typeof DOB != 'undefined' ? DOB: '' %>"required>
-          </div>
-          <div class="input-box">
-            <span class="details">CNIC Number</span>
-            <input type="text" placeholder="Enter your number" minlength="15" maxlength="15" pattern="^\d{5}-\d{7}-\d{1}$" id="CNIC" name="CNIC" value="<% typeof CNIC != 'undefined' ? CNIC: '' %>" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" minlength="11" maxlength="11" id="num" name="num" value="<% typeof num != 'undefined' ? num: '' %>"required>
-          </div>
-          <div class="input-box">
-            <span class="details">Password</span>
-            <input type="password" minlength="5" placeholder="Enter your password" id="password" name="password"  required>
-          </div>
-          <div class="input-box">
-            <span class="details">Confirm Password</span>
-            <input type="password" placeholder="Confirm your password" id="cPassword" name="cPassword" required>
-          </div>
-        </div>
-     
-        </div>
-        <div class="button">
-          <input type="submit" value="Register">
-        </div>
-      </form>
-    </div>
-  </div>
+    <ol class="breadcrumb">
+			<li><a href="/users/secret">Secret</a></li>
+			<li class="active">Registration</li>
+		</ol>
+
+		<div class="row">
+			
+			<!-- Article main content -->
+			<article class="col-xs-12 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Registration</h1>
+				</header>
+				
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center">Register A New Warden</h3>
+							<hr>
+
+							<form action="/users/register" method="post">
+								<div class="top-margin">
+									<label>Full Name</label>
+									<input type="text" placeholder="Enter your name" name="fname" value="<% typeof fname != 'undefined' ? fname: '' %>" class="form-control" required>
+								</div>
+								<div class="top-margin">
+									<label>User Name</label>
+									<input type="text" placeholder="Enter your username" id="uname" name="uname" value="<% typeof uname != 'undefined' ? uname: '' %>" class="form-control" required>
+								</div>
+								<div class="top-margin">
+									<label>Email Address <span class="text-danger">*	</span></label>
+									<input type="email" placeholder="Email" value="<% typeof email != 'undefined' ? email: '' %>" id="email" name="email" class="form-control" required>
+								</div>
+								<div class="top-margin">
+									<label>Date Of Birth<span class="text-danger">*	</span></label>
+									<input type="date" id="DOB" name="DOB" value="<% typeof DOB != 'undefined' ? DOB: '' %>" class="form-control" required >
+								</div>
+								<div class="top-margin">
+									<label>CNIC <span class="text-danger">*	</span></label>
+									<input type="text" placeholder="Enter your number" minlength="15" maxlength="15" pattern="^\d{5}-\d{7}-\d{1}$" id="CNIC" name="CNIC" value="<% typeof CNIC != 'undefined' ? CNIC: '' %>" class="form-control" required>
+								</div>
+								<div class="top-margin">
+									<label>Phone Number <span class="text-danger">*	</span></label>
+									<input type="text" placeholder="Enter your number" minlength="11" maxlength="11" id="num" name="num" value="<% typeof num != 'undefined' ? num: '' %>" class="form-control" required>
+								</div>
+								<div class="row top-margin">
+									<div class="col-sm-6">
+										<label>Password <span class="text-danger">*</span></label>
+										<input type="password" minlength="5" placeholder="Enter your password" id="password" name="password" class="form-control" required>
+									</div>
+									<div class="col-sm-6">
+										<label>Confirm Password <span class="text-danger">*</span></label>
+										<input type="password" placeholder="Confirm your password" id="cPassword" name="cPassword" class="form-control" required>
+									</div>
+								</div>
+
+								<hr>
+
+								<div class="row">
+									<div class="col-lg-4">                        
+									</div>
+									<div class="col-lg-4 text-right">
+										<button class="btn btn-action" type="submit">Register</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+				
+			</article>
+			<!-- /Article -->
+
+		</div>
+	</div>	<!-- /container -->
+	
 
 	<footer id="footer" class="top-space">
 
@@ -223,7 +124,7 @@ form .user-details .input-box{
 					</div>
 
 					<div class="col-md-3 widget">
-						<h3 class="widget-title">Follow US</h3>
+						<h3 class="widget-title">Follow Us</h3>
 						<div class="widget-body">
 							<p class="follow-me-icons clearfix">
 								<a href=""><i class="fa fa-twitter fa-2"></i></a>
@@ -237,7 +138,8 @@ form .user-details .input-box{
 					<div class="col-md-6 widget">
 						<h3 class="widget-title">Our Desires</h3>
 						<div class="widget-body">
-							<p>Our desire is to make you feel comfortable with our services and features, make you inform about the automated things, make you inform about the advance and modern technology, make you feel good to give you an ease with our automated system.</p>
+							<p>Our desire is to make you feel comfortable with our services and features, make you inform about the automated things, make you inform about the advance and modern technology, make you feel good <br>
+								to give you an ease with our automated system.</p>
 						</div>
 					</div>
 
@@ -253,20 +155,14 @@ form .user-details .input-box{
 						<div class="widget-body">
 							<p class="simplenav">
 								<a href="#">Home</a> | 
-								<a href="about.html">About</a> |
-								<a href="sidebar-right.html">Sidebar</a> |
-								<a href="contact.html">Contact</a> |
-								<b><a href="/login">Sign In</a></b>
+								<a href="/users/about">About</a> |
+								<a href="/users/contact">Contact</a> |
+								<b><a href="/users/login">Log In</a></b>
 							</p>
 						</div>
 					</div>
 
 					<div class="col-md-6 widget">
-						<div class="widget-body">
-							<p class="text-right">
-								Copyright &copy; 2021, Designed by Web Project Group<br> 
-							</p>
-						</div>
 					</div>
 
 				</div> <!-- /row of widgets -->

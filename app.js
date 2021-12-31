@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
-const path=require("path");
-const nodemailer=require('nodemailer');
-const Challan = require('../menbackend/models/challan');
+const path = require("path");
+const nodemailer = require('nodemailer');
+const Challan = require('./models/challan');
 const app = express();
 
 // Passport Config
@@ -65,6 +65,7 @@ app.post('/send',(req,res)=>{
   <li>Vehicle Number:${req.body.vnumber}</li>
   <li>Violation:${req.body.Violation}</li>
   <li>Fine:${req.body.fine}</li>
+  <li>Time And Date:${req.body.dandt}</li>
   </ul>
   `;
   let transporter = nodemailer.createTransport({
