@@ -26,6 +26,24 @@ router.get('/allchallans',ensureAuthenticated, function(req, res, next) {
   });
 
 });
+router.get('/delete/:id', async (req, res) => {
+  let result = await Reportt.deleteOne({ _id: req.params.id });
+  if (!result)
+    return res.status(400).json({
+      err: `Oops something went wrong! Cannont delete student with ${req.params.id}.`
+    });
+  // req.flash("student_del_success_msg", "Student has been deleted successfully");
+  res.redirect("/users/allreports");
+});
+router.get('/deletec/:id', async (req, res) => {
+  let result = await challanss.deleteOne({ _id: req.params.id });
+  if (!result)
+    return res.status(400).json({
+      err: `Oops something went wrong! Cannont delete student with ${req.params.id}.`
+    });
+  // req.flash("student_del_success_msg", "Student has been deleted successfully");
+  res.redirect("/users/allchallans");
+});
 router.get('/allreports', ensureAuthenticated,function(req, res, next) {
       
   Reportt.find((err, docs) => {
